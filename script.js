@@ -51,12 +51,10 @@ function handleCreatePost() {
     
     if (postContent) {
         if (editingPostId !== null) {
-            // If editing, update the post content
             const postIndex = posts.findIndex(post => post.id === editingPostId);
             posts[postIndex].content = postContent;
             editingPostId = null; 
         } else {
-            // If not editing, add a new post
             const newPost = { id: Date.now(), content: postContent }; // Create a new post with a unique id
             posts.push(newPost); // Add the new post to the posts array
         }
